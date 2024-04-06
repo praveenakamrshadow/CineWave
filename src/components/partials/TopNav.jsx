@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import axios from '../utils/axios';
+import axios from '../../utils/axios';
 
 const TopNav = () => {
     const [query, setQuery] = useState('');
@@ -20,7 +20,7 @@ const TopNav = () => {
     }, [query]);
 
     return (
-        <div className="w-full h-[10vh] relative flex justify-start ml-[15%] items-center">
+        <div className="w-[80%] h-[10vh] relative flex m-auto items-center">
             <i className="ri-search-line text-zinc-400 text-2xl"></i>
             <input
                 onChange={(e) => setQuery(e.target.value)}
@@ -32,10 +32,10 @@ const TopNav = () => {
             {query.length > 0 && (
                 <i
                     onClick={() => setQuery('')}
-                    className="ri-close-fill text-zinc-400 text-2xl cursor-pointer"
+                    className=" ri-close-fill text-zinc-400 text-2xl cursor-pointer right-0"
                 ></i>
             )}
-            <div className="absolute w-[50%] max-h-[50vh] bg-zinc-200 top-[90%] overflow-auto rounded">
+            <div className="absolute w-[50%] max-h-[50vh] bg-zinc-200 top-[100%] left-[5%] overflow-auto rounded">
                 {Searches.length > 0 &&
                     Searches.map((s, i) => (
                         <Link
