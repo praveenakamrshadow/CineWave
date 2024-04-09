@@ -7,57 +7,43 @@ import Cards from './partials/Cards';
 import Loading from './Loading';
 import InfiniteScroll from 'react-infinite-scroll-component';
 
-const Trending = () => {
+const TvShows = () => {
     const navigate = useNavigate();
-    const [category, setCategory] = useState('all');
-    const [duration, setDuration] = useState('day');
-    const [trending, setTrending] = useState([]);
+    const [category, setCategory] = useState('airing_today');
+    const [tv, setTv] = useState([]);
     const [page, setPage] = useState(1);
+    const [hasMore, setHasMore] = useState(true);
 
     useEffect(() => {
-        document.title = 'SCSDB | Trending ' + category.toUpperCase();
+        document.title = 'SCSDB | Tv Shows ';
     }, [category]);
 
-    const getTrending = async () => {
+    const getTv = async () => {
         try {
-            const { data } = await axios.get(
-                `/trending/${category}/${duration}`,
-                {
-                    params: {
-                        page: page,
-                    },
-                }
-            );
-            if (page === 1) {
-                setTrending(data.results);
+            const { data } = await axios.get(`/tv/${category}?page=${page}`);
+            console.log(data);
+            if (data.results.length > 0) {
+                setTv((prevState) => [...prevState, ...data.results]);
+                setPage(page + 1);
             } else {
-                setTrending((prevTrending) => [
-                    ...prevTrending,
-                    ...data.results,
-                ]);
+                setHasMore(false);
             }
-            setPage(page + 1);
         } catch (error) {
-            console.log('Error:', error);
+            console.log('Error: ', error);
         }
     };
-
-    useEffect(() => {
-        setPage(1);
-        getTrending();
-    }, [category, duration]);
 
     const handleCategoryChange = (e) => {
         setCategory(e.target.value);
         setPage(1);
     };
 
-    const handleDurationChange = (e) => {
-        setDuration(e.target.value);
+    useEffect(() => {
         setPage(1);
-    };
-
-    return trending.length > 0 ? (
+        setTv([]);
+        getTv();
+    }, [category]);
+    return tv.length > 0 ? (
         <>
             <div className="w-screen h-screen">
                 <div className="w-full flex items-center justify-between px-[5%] ">
@@ -66,33 +52,32 @@ const Trending = () => {
                             onClick={() => navigate(-1)}
                             className="hover:text-[#6566CD] ri-arrow-left-line cursor-pointer mr-1"
                         ></i>
-                        Trending
+                        {''}
+                        tv
                     </h1>
                     <div className="flex items-center w-[80%]">
                         <TopNav />
                         <DropDown
                             title="category"
-                            options={['movie', 'tv', 'all']}
+                            options={[
+                                'on_the_air',
+                                'popular',
+                                'top_rated',
+                                'airing_today',
+                            ]}
                             func={handleCategoryChange}
                             value={category}
-                        />
-                        <div className="w-[2%]"></div>
-                        <DropDown
-                            title="Duration"
-                            options={['week', 'day']}
-                            func={handleDurationChange}
-                            value={duration}
                         />
                     </div>
                 </div>
 
                 <InfiniteScroll
-                    dataLength={trending.length}
-                    next={getTrending}
-                    hasMore={true}
+                    dataLength={tv.length}
+                    next={getTv}
+                    hasMore={hasMore}
                     loader={<Loading />}
                 >
-                    <Cards data={trending} title="Trending" />
+                    <Cards data={tv} title="tv" />
                 </InfiniteScroll>
             </div>
         </>
@@ -101,4 +86,4 @@ const Trending = () => {
     );
 };
 
-export default Trending;
+export default TvShows;

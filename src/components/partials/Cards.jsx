@@ -8,7 +8,9 @@ const Cards = ({ data, title }) => {
                     <img
                         className="h-[40vh] object-cover shadow-[8px_17px_38px_2px_rgba(0,0,0,0.5)]"
                         src={`https://image.tmdb.org/t/p/original/${
-                            c.poster_path || c.backdrop_path
+                            c.poster_path ||
+                            c.backdrop_path ||
+                            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIYFqyM9w9Hx4IGRoMQ2Xml0Kb4gBFMMzH9DMIiycxdg&s'
                         }`}
                         alt=""
                     />
