@@ -53,7 +53,7 @@ const Movies = () => {
                             className="hover:text-[#6566CD] ri-arrow-left-line cursor-pointer mr-1"
                         ></i>
                         {''}
-                        Movie
+                        Movies
                     </h1>
                     <div className="flex items-center w-[80%]">
                         <TopNav />
