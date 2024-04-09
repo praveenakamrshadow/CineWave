@@ -5,6 +5,7 @@ import axios from '../../src/utils/axios';
 import Header from './partials/Header';
 import HorizontalCards from './partials/HorizontalCards';
 import DropDown from './partials/DropDown';
+import Loading from './Loading';
 
 function Home() {
     document.title = 'SCSDB | Homepage';
@@ -59,7 +60,7 @@ function Home() {
             </div>
         </>
     ) : (
-        <h1>Loading...</h1>
+        <Loading />
     );
 }
 
