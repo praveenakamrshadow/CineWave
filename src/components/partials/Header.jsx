@@ -8,7 +8,7 @@ function Header({ data }) {
             style={{
                 background: `linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.5)),url(https://image.tmdb.org/t/p/original/${data.backdrop_path}) no-repeat top center/cover`,
             }}
-            className="w-full h-[55vh] flex flex-col justify-end items-start p-[5%]"
+            className="w-full h-[50vh] flex flex-col justify-end items-start p-[5%]"
         >
             <h1 className="w-[70%] text-5xl font-black text-white">
                 {data.name ||
