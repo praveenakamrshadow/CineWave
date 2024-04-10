@@ -1,9 +1,12 @@
+import { Link } from 'react-router-dom';
+
 const HorizontalCards = ({ data }) => {
     return (
         <div className="w-full p-3">
             <div className="w-[100%] p-1 flex overflow-y-hidden">
                 {data.map((d, i) => (
-                    <div
+                    <Link
+                        to={`/${d.media_type}/details/${d.id}`}
                         key={i}
                         className="min-w-[18%] h-[50vh] mr-5 bg-zinc-900 mb-5"
                     >
@@ -26,7 +29,7 @@ const HorizontalCards = ({ data }) => {
                                 <span className="text-zinc-500">more</span>
                             </p>
                         </div>
-                    </div>
+                    </Link>
                 ))}
             </div>
         </div>

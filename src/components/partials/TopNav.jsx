@@ -35,7 +35,7 @@ const TopNav = () => {
                     className=" ri-close-fill text-zinc-400 text-2xl cursor-pointer right-0"
                 ></i>
             )}
-            <div className="absolute w-[50%] max-h-[50vh] bg-zinc-200 top-[100%] left-[5%] overflow-auto rounded">
+            <div className="z-[999999] absolute w-[50%] max-h-[50vh] bg-zinc-200 top-[100%] left-[5%] overflow-auto rounded">
                 {Searches.length > 0 &&
                     Searches.map((s, i) => (
                         <Link
