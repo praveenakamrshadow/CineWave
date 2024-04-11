@@ -1,13 +1,19 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { asyncLoadMovie, removeMovie } from '../store/actions/MovieActions';
-import { useParams, useLocation, useNavigate, Link } from 'react-router-dom';
+import {
+    useParams,
+    useLocation,
+    useNavigate,
+    Link,
+    Outlet,
+} from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import Loading from './Loading';
 import HorizontalCards from './partials/HorizontalCards';
 
 const MovieDetails = () => {
-    const { pathName } = useLocation();
+    const { pathname } = useLocation();
     const navigate = useNavigate();
     const { id } = useParams();
     const { info } = useSelector((state) => state.Movie);
@@ -21,7 +27,7 @@ const MovieDetails = () => {
     }, [dispatch, id]);
 
     return info ? (
-        <div className="w-screen h-[140vh] bg-[#1F1E24] px-[10%] relative">
+        <div className="w-screen h-[160vh] bg-[#1F1E24] px-[10%] relative">
             <nav className="w-full h-[10vh] text-zinc-100 flex items-center gap-7 text-xl">
                 <Link
                     onClick={() => navigate(-1)}
@@ -89,7 +95,7 @@ const MovieDetails = () => {
 
                     <Link
                         className=" px-10 py-5 bg-[#6566cd] rounded-lg"
-                        to={`${pathName}/trailer/${id}`}
+                        to={`${pathname}/trailer`}
                     >
                         <i className="ri-play-fill mr-2"></i>
                         Play Trailer
@@ -152,6 +158,7 @@ const MovieDetails = () => {
                         : info.similar
                 }
             />
+            <Outlet />
         </div>
     ) : (
         <Loading />
