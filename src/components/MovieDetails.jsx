@@ -52,7 +52,7 @@ const MovieDetails = () => {
 
             <div className="w-full flex">
                 <img
-                    className="h-[55vh] object-cover shadow-[8px_17px_38px_2px_rgba(0,0,0,0.5)]"
+                    className="h-[55vh] object-cover rounded-lg shadow-[8px_17px_38px_2px_rgba(0,0,0,0.5)]"
                     src={`https://image.tmdb.org/t/p/original/${
                         info.detail.poster_path ||
                         info.detail.backdrop_path ||
@@ -106,7 +106,7 @@ const MovieDetails = () => {
             <div className="w-[80%] flex flex-col gap-y-5 mt-5">
                 {info.watchProviders && info.watchProviders.flatrate && (
                     <div className="flex gap-x-5  items-center text-white">
-                        <h1>Available on Platforms</h1>
+                        <h1>Available on </h1>
                         {info.watchProviders.flatrate.map((w) => (
                             <img
                                 title={w.provider_name}
@@ -120,7 +120,7 @@ const MovieDetails = () => {
 
                 {info.watchProviders && info.watchProviders.rent && (
                     <div className="flex gap-x-5 items-center text-white">
-                        <h1>Available on Rent</h1>
+                        <h1>Rent on </h1>
                         {info.watchProviders.rent.map((w) => (
                             <img
                                 title={w.provider_name}
@@ -134,7 +134,7 @@ const MovieDetails = () => {
 
                 {info.watchProviders && info.watchProviders.buy && (
                     <div className="flex gap-x-5 items-center text-white">
-                        <h1>Available to Buy</h1>
+                        <h1>Buy on </h1>
                         {info.watchProviders.buy.map((w) => (
                             <img
                                 title={w.provider_name}
@@ -147,7 +147,7 @@ const MovieDetails = () => {
                 )}
             </div>
 
-            <hr className="mt-2 mb-5 border-none h-[2px] bg-zinc-400" />
+            <hr className="mt-5 mb-5 border-none h-[2px] bg-zinc-400" />
             <h1 className="text-3xl mt-5 font-bold text-white">
                 Similar Movies
             </h1>

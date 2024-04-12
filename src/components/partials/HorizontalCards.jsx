@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 const HorizontalCards = ({ data }) => {
     return (
         <div className="w-full p-3">
-            <div className="w-[100%] p-1 flex overflow-y-hidden">
+            <div className="w-[100%]  p-1 flex overflow-y-hidden">
                 {data.map((d, i) => (
                     <Link
                         to={`/${d.media_type}/details/${d.id}`}
@@ -11,7 +11,7 @@ const HorizontalCards = ({ data }) => {
                         className="min-w-[18%] h-[50vh] mr-5 bg-zinc-900 mb-5"
                     >
                         <img
-                            className="w-full h-[40%] object-cover"
+                            className="w-full h-[40%] rounded-md object-cover"
                             src={`https://image.tmdb.org/t/p/original/${
                                 d.backdrop_path || d.poster_path
                             }`}
