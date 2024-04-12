@@ -149,7 +149,7 @@ const MovieDetails = () => {
 
             <hr className="mt-5 mb-5 border-none h-[2px] bg-zinc-400" />
             <h1 className="text-3xl mt-5 font-bold text-white">
-                Similar Movies
+                Recommendations & Similar
             </h1>
             <HorizontalCards
                 data={
