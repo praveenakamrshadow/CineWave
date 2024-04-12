@@ -5,7 +5,7 @@ const SideNav = () => {
         <div className="w-[20%] h-full border-r-2 border-zinc-400 p-6">
             <h1 className="text-2xl text-white font-bold">
                 <i className="ri-tv-fill text-[#6556CD] mr-2"></i>
-                <span className="text-white">SCSDB.</span>
+                <span className="text-white">CineWave</span>
             </h1>
 
             <nav className="flex flex-col text-zinc-400 text-md gap-1">
@@ -49,7 +49,7 @@ const SideNav = () => {
                     Website Information
                 </h1>
                 <Link className="hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-5 ">
-                    <i className="ri-information-fill mr-2"></i>About SCSDB
+                    <i className="ri-information-fill mr-2"></i>About CineWave
                 </Link>
                 <Link className="hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-5 ">
                     <i className="ri-phone-fill mr-2"></i>Contact Us
