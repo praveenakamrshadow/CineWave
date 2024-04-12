@@ -40,14 +40,14 @@ To run this application locally, follow these steps:
 
 ```npm run dev```
 
-Usage
+## Usage
 Once the application is running, you can browse and search for movies and TV shows. Click on a movie or TV show to view its details, including the trailer.
 
 The application uses infinite scrolling, so you can keep scrolling down to load more content seamlessly.
 
-Contributing
+## Contributing
 Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
 
-License
+## License
 This project is licensed under the MIT License.
 
