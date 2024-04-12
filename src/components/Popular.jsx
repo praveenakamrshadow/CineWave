@@ -15,7 +15,7 @@ const Popular = () => {
     const [hasMore, setHasMore] = useState(true);
 
     useEffect(() => {
-        document.title = 'SCSDB | Popular ' + category.toUpperCase();
+        document.title = 'CineWave | Popular ' + category.toUpperCase();
     }, [category]);
 
     const getPopular = async () => {

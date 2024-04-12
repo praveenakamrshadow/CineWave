@@ -15,7 +15,7 @@ const Trending = () => {
     const [page, setPage] = useState(1);
 
     useEffect(() => {
-        document.title = 'SCSDB | Trending ' + category.toUpperCase();
+        document.title = 'CineWave | Trending ' + category.toUpperCase();
     }, [category]);
 
     const getTrending = async () => {

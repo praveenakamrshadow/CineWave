@@ -15,7 +15,7 @@ const TvShows = () => {
     const [hasMore, setHasMore] = useState(true);
 
     useEffect(() => {
-        document.title = 'SCSDB | Tv Shows ';
+        document.title = 'CineWave | Tv Shows ';
     }, [category]);
 
     const getTv = async () => {

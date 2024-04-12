@@ -8,7 +8,7 @@ import DropDown from './partials/DropDown';
 import Loading from './Loading';
 
 function Home() {
-    document.title = 'SCSDB | Homepage';
+    document.title = 'CineWave | Homepage';
     const [wallpaper, setWallpaper] = useState(null);
     const [trending, setTrending] = useState(null);
     const [category, setCategory] = useState('all');

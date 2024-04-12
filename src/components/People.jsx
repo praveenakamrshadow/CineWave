@@ -13,7 +13,7 @@ const People = () => {
     const [hasMore, setHasMore] = useState(true);
 
     useEffect(() => {
-        document.title = 'SCSDB | People';
+        document.title = 'CineWave | People';
     }, []);
 
     const getPerson = async () => {

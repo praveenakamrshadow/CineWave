@@ -15,7 +15,7 @@ const Movies = () => {
     const [hasMore, setHasMore] = useState(true);
 
     useEffect(() => {
-        document.title = 'SCSDB | Movies ';
+        document.title = 'CineWave | Movies ';
     }, [category]);
 
     const getMovie = async () => {
