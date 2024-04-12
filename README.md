@@ -6,9 +6,9 @@ This is a web application built with React that allows users to explore and disc
 
 - Browse and search for movies and TV shows
 - View detailed information about a movie or TV show
-- Watch trailers and video clips (if available)
+- Watch trailers
+- availability in various digital platforms to watch, rent, buy
 - Infinite scrolling for seamless content loading
-- Responsive design for optimal viewing on different devices
 
 ## Technologies Used
 
@@ -26,5 +26,28 @@ To run this application locally, follow these steps:
 
 1. Clone the repository:
 
-
 ```git clone https://github.com/your-username/movie-tv-app.git```
+
+2. Navigate to the project directory:
+
+```cd movie-tv-app```
+
+3. Install the dependencies:
+
+```npm install```
+
+4. Start the development server:
+
+```npm run dev```
+
+Usage
+Once the application is running, you can browse and search for movies and TV shows. Click on a movie or TV show to view its details, including the trailer.
+
+The application uses infinite scrolling, so you can keep scrolling down to load more content seamlessly.
+
+Contributing
+Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
+
+License
+This project is licensed under the MIT License.
+
