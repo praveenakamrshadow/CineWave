@@ -1,4 +1,4 @@
-# Movie & TV Show Web Application
+# CineWave - Movie & TV Show Web Application
 
 This is a web application built with React that allows users to explore and discover movies and TV shows. It utilizes various libraries and tools to provide a seamless user experience.
 
